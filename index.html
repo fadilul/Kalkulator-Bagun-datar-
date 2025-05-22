@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Bangun Datar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Kalkulator Bangun Datar</h1>
+    
+    <div class="container">
+        <!-- Persegi -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Square_%28shape%29.svg/1200px-Square_%28shape%29.svg.png" alt="Persegi" class="shape-image">
+            <h2>Persegi</h2>
+            <div class="input-group">
+                <label for="square-side">Panjang Sisi (s)</label>
+                <input type="number" id="square-side" placeholder="Masukkan panjang sisi">
+            </div>
+            <button onclick="calculateSquare()">Hitung</button>
+            <div class="result" id="square-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="square-area"></span></p>
+                <p>Keliling: <span id="square-perimeter"></span></p>
+            </div>
+        </div>
+        
+        <!-- Persegi Panjang -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Rectangle_.png/640px-Rectangle_.png" alt="Persegi Panjang" class="shape-image">
+            <h2>Persegi Panjang</h2>
+            <div class="input-group">
+                <label for="rectangle-length">Panjang (p)</label>
+                <input type="number" id="rectangle-length" placeholder="Masukkan panjang">
+            </div>
+            <div class="input-group">
+                <label for="rectangle-width">Lebar (l)</label>
+                <input type="number" id="rectangle-width" placeholder="Masukkan lebar">
+            </div>
+            <button onclick="calculateRectangle()">Hitung</button>
+            <div class="result" id="rectangle-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="rectangle-area"></span></p>
+                <p>Keliling: <span id="rectangle-perimeter"></span></p>
+            </div>
+        </div>
+        
+        <!-- Segitiga -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Triangle-righ-angled.svg/1200px-Triangle-righ-angled.svg.png" alt="Segitiga" class="shape-image">
+            <h2>Segitiga</h2>
+            <div class="input-group">
+                <label for="triangle-base">Alas (a)</label>
+                <input type="number" id="triangle-base" placeholder="Masukkan alas">
+            </div>
+            <div class="input-group">
+                <label for="triangle-height">Tinggi (t)</label>
+                <input type="number" id="triangle-height" placeholder="Masukkan tinggi">
+            </div>
+            <div class="input-group">
+                <label for="triangle-side1">Sisi 1 (b)</label>
+                <input type="number" id="triangle-side1" placeholder="Masukkan sisi 1">
+            </div>
+            <div class="input-group">
+                <label for="triangle-side2">Sisi 2 (c)</label>
+                <input type="number" id="triangle-side2" placeholder="Masukkan sisi 2">
+            </div>
+            <button onclick="calculateTriangle()">Hitung</button>
+            <div class="result" id="triangle-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="triangle-area"></span></p>
+                <p>Keliling: <span id="triangle-perimeter"></span></p>
+            </div>
+        </div>
+        
+        <!-- Lingkaran -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Circle-withsegments.svg/1200px-Circle-withsegments.svg.png" alt="Lingkaran" class="shape-image">
+            <h2>Lingkaran</h2>
+            <div class="input-group">
+                <label for="circle-radius">Jari-jari (r)</label>
+                <input type="number" id="circle-radius" placeholder="Masukkan jari-jari">
+            </div>
+            <button onclick="calculateCircle()">Hitung</button>
+            <div class="result" id="circle-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="circle-area"></span></p>
+                <p>Keliling: <span id="circle-perimeter"></span></p>
+            </div>
+        </div>
+        
+        <!-- Jajar Genjang -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Parallelogram.svg/1200px-Parallelogram.svg.png" alt="Jajar Genjang" class="shape-image">
+            <h2>Jajar Genjang</h2>
+            <div class="input-group">
+                <label for="parallelogram-base">Alas (a)</label>
+                <input type="number" id="parallelogram-base" placeholder="Masukkan alas">
+            </div>
+            <div class="input-group">
+                <label for="parallelogram-height">Tinggi (t)</label>
+                <input type="number" id="parallelogram-height" placeholder="Masukkan tinggi">
+            </div>
+            <div class="input-group">
+                <label for="parallelogram-side">Sisi Miring (b)</label>
+                <input type="number" id="parallelogram-side" placeholder="Masukkan sisi miring">
+            </div>
+            <button onclick="calculateParallelogram()">Hitung</button>
+            <div class="result" id="parallelogram-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="parallelogram-area"></span></p>
+                <p>Keliling: <span id="parallelogram-perimeter"></span></p>
+            </div>
+        </div>
+        
+        <!-- Trapesium -->
+        <div class="calculator">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Trapezoid.svg/1200px-Trapezoid.svg.png" alt="Trapesium" class="shape-image">
+            <h2>Trapesium</h2>
+            <div class="input-group">
+                <label for="trapezoid-base1">Sisi Sejajar 1 (a)</label>
+                <input type="number" id="trapezoid-base1" placeholder="Masukkan sisi sejajar 1">
+            </div>
+            <div class="input-group">
+                <label for="trapezoid-base2">Sisi Sejajar 2 (b)</label>
+                <input type="number" id="trapezoid-base2" placeholder="Masukkan sisi sejajar 2">
+            </div>
+            <div class="input-group">
+                <label for="trapezoid-height">Tinggi (t)</label>
+                <input type="number" id="trapezoid-height" placeholder="Masukkan tinggi">
+            </div>
+            <div class="input-group">
+                <label for="trapezoid-side1">Sisi 1 (c)</label>
+                <input type="number" id="trapezoid-side1" placeholder="Masukkan sisi 1">
+            </div>
+            <div class="input-group">
+                <label for="trapezoid-side2">Sisi 2 (d)</label>
+                <input type="number" id="trapezoid-side2" placeholder="Masukkan sisi 2">
+            </div>
+            <button onclick="calculateTrapezoid()">Hitung</button>
+            <div class="result" id="trapezoid-result">
+                <h3>Hasil Perhitungan</h3>
+                <p>Luas: <span id="trapezoid-area"></span></p>
+                <p>Keliling: <span id="trapezoid-perimeter"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
